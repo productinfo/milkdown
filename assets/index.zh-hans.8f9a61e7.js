@@ -1,1 +1,45 @@
-export default"# 使用插件\n\n## 初尝插件\n\n事实上，在 milkdown 中的所有特性都是由插件来支持的。\n我们之前使用过的 `commonmark` 就是一个插件，现在我们可以尝试更多插件：\n\n```typescript\nimport { Editor } from '@milkdown/core';\nimport { nord } from '@milkdown/theme-nord';\nimport { commonmark } from '@milkdown/preset-commonmark';\nimport { tooltip } from '@milkdown/plugin-tooltip';\nimport { slash } from '@milkdown/plugin-slash';\n\nEditor.make().use(nord).use(commonmark).use(tooltip).use(slash).create();\n```\n\n---\n\n## 寻找插件\n\n### 官方插件\n\nMilkdown 提供了下列官方插件。\n\n| 名称                                                                                           | 描述                                                               |\n| :--------------------------------------------------------------------------------------------- | :----------------------------------------------------------------- |\n| [@milkdown/preset-commonmark](https://www.npmjs.com/package/@milkdown/preset-commonmark)       | 添加 [commonmark](https://commonmark.org/) 语法支持                |\n| [@milkdown/preset-gfm](https://www.npmjs.com/package/@milkdown/preset-gfm)                     | 添加 [gfm](https://github.github.com/gfm/) 语法支持                |\n| [@milkdown/plugin-history](https://www.npmjs.com/package/@milkdown/plugin-history)             | 添加撤销和重做支持                                                 |\n| [@milkdown/plugin-clipboard](https://www.npmjs.com/package/@milkdown/plugin-clipboard)         | 添加 markdown 格式的复制粘贴能力                                   |\n| [@milkdown/plugin-cursor](https://www.npmjs.com/package/@milkdown/plugin-cursor)               | 添加 drop 和 gap 光标                                              |\n| [@milkdown/plugin-listener](https://www.npmjs.com/package/@milkdown/plugin-listener)           | 添加监听器支持                                                     |\n| [@milkdown/plugin-collaborative](https://www.npmjs.com/package/@milkdown/plugin-collaborative) | 添加协同编辑支持                                                   |\n| [@milkdown/plugin-table](https://www.npmjs.com/package/@milkdown/plugin-table)                 | 添加表格语法支持（已经包含在 gfm 中）                              |\n| [@milkdown/plugin-prism](https://www.npmjs.com/package/@milkdown/plugin-prism)                 | 添加 [prism](https://prismjs.com/) 用于支持代码块高亮              |\n| [@milkdown/plugin-math](https://www.npmjs.com/package/@milkdown/plugin-math)                   | 添加 [LaTeX](https://en.wikipedia.org/wiki/LaTeX) 用于支持数学公式 |\n| [@milkdown/plugin-tooltip](https://www.npmjs.com/package/@milkdown/plugin-tooltip)             | 添加选择工具条                                                     |\n| [@milkdown/plugin-slash](https://www.npmjs.com/package/@milkdown/plugin-slash)                 | 添加斜线指令                                                       |\n| [@milkdown/plugin-emoji](https://www.npmjs.com/package/@milkdown/plugin-emoji)                 | 添加表情符号支持                                                   |\n\n### 社区插件\n\n查看 [awesome-milkdown](https://github.com/Saul-Mirone/awesome-milkdown) 来寻找社区插件。你也可以通过提交 pr 的方式将自己编写的插件添加上去。\n";
+var n=`# \u4F7F\u7528\u63D2\u4EF6
+
+## \u521D\u5C1D\u63D2\u4EF6
+
+\u4E8B\u5B9E\u4E0A\uFF0C\u5728 milkdown \u4E2D\u7684\u6240\u6709\u7279\u6027\u90FD\u662F\u7531\u63D2\u4EF6\u6765\u652F\u6301\u7684\u3002
+\u6211\u4EEC\u4E4B\u524D\u4F7F\u7528\u8FC7\u7684 \`commonmark\` \u5C31\u662F\u4E00\u4E2A\u63D2\u4EF6\uFF0C\u73B0\u5728\u6211\u4EEC\u53EF\u4EE5\u5C1D\u8BD5\u66F4\u591A\u63D2\u4EF6\uFF1A
+
+\`\`\`typescript
+import { Editor } from '@milkdown/core';
+import { nord } from '@milkdown/theme-nord';
+import { commonmark } from '@milkdown/preset-commonmark';
+import { tooltip } from '@milkdown/plugin-tooltip';
+import { slash } from '@milkdown/plugin-slash';
+
+Editor.make().use(nord).use(commonmark).use(tooltip).use(slash).create();
+\`\`\`
+
+---
+
+## \u5BFB\u627E\u63D2\u4EF6
+
+### \u5B98\u65B9\u63D2\u4EF6
+
+Milkdown \u63D0\u4F9B\u4E86\u4E0B\u5217\u5B98\u65B9\u63D2\u4EF6\u3002
+
+| \u540D\u79F0                                                                                           | \u63CF\u8FF0                                                               |
+| :--------------------------------------------------------------------------------------------- | :----------------------------------------------------------------- |
+| [@milkdown/preset-commonmark](https://www.npmjs.com/package/@milkdown/preset-commonmark)       | \u6DFB\u52A0 [commonmark](https://commonmark.org/) \u8BED\u6CD5\u652F\u6301                |
+| [@milkdown/preset-gfm](https://www.npmjs.com/package/@milkdown/preset-gfm)                     | \u6DFB\u52A0 [gfm](https://github.github.com/gfm/) \u8BED\u6CD5\u652F\u6301                |
+| [@milkdown/plugin-history](https://www.npmjs.com/package/@milkdown/plugin-history)             | \u6DFB\u52A0\u64A4\u9500\u548C\u91CD\u505A\u652F\u6301                                                 |
+| [@milkdown/plugin-clipboard](https://www.npmjs.com/package/@milkdown/plugin-clipboard)         | \u6DFB\u52A0 markdown \u683C\u5F0F\u7684\u590D\u5236\u7C98\u8D34\u80FD\u529B                                   |
+| [@milkdown/plugin-cursor](https://www.npmjs.com/package/@milkdown/plugin-cursor)               | \u6DFB\u52A0 drop \u548C gap \u5149\u6807                                              |
+| [@milkdown/plugin-listener](https://www.npmjs.com/package/@milkdown/plugin-listener)           | \u6DFB\u52A0\u76D1\u542C\u5668\u652F\u6301                                                     |
+| [@milkdown/plugin-collaborative](https://www.npmjs.com/package/@milkdown/plugin-collaborative) | \u6DFB\u52A0\u534F\u540C\u7F16\u8F91\u652F\u6301                                                   |
+| [@milkdown/plugin-table](https://www.npmjs.com/package/@milkdown/plugin-table)                 | \u6DFB\u52A0\u8868\u683C\u8BED\u6CD5\u652F\u6301\uFF08\u5DF2\u7ECF\u5305\u542B\u5728 gfm \u4E2D\uFF09                              |
+| [@milkdown/plugin-prism](https://www.npmjs.com/package/@milkdown/plugin-prism)                 | \u6DFB\u52A0 [prism](https://prismjs.com/) \u7528\u4E8E\u652F\u6301\u4EE3\u7801\u5757\u9AD8\u4EAE              |
+| [@milkdown/plugin-math](https://www.npmjs.com/package/@milkdown/plugin-math)                   | \u6DFB\u52A0 [LaTeX](https://en.wikipedia.org/wiki/LaTeX) \u7528\u4E8E\u652F\u6301\u6570\u5B66\u516C\u5F0F |
+| [@milkdown/plugin-tooltip](https://www.npmjs.com/package/@milkdown/plugin-tooltip)             | \u6DFB\u52A0\u9009\u62E9\u5DE5\u5177\u6761                                                     |
+| [@milkdown/plugin-slash](https://www.npmjs.com/package/@milkdown/plugin-slash)                 | \u6DFB\u52A0\u659C\u7EBF\u6307\u4EE4                                                       |
+| [@milkdown/plugin-emoji](https://www.npmjs.com/package/@milkdown/plugin-emoji)                 | \u6DFB\u52A0\u8868\u60C5\u7B26\u53F7\u652F\u6301                                                   |
+
+### \u793E\u533A\u63D2\u4EF6
+
+\u67E5\u770B [awesome-milkdown](https://github.com/Saul-Mirone/awesome-milkdown) \u6765\u5BFB\u627E\u793E\u533A\u63D2\u4EF6\u3002\u4F60\u4E5F\u53EF\u4EE5\u901A\u8FC7\u63D0\u4EA4 pr \u7684\u65B9\u5F0F\u5C06\u81EA\u5DF1\u7F16\u5199\u7684\u63D2\u4EF6\u6DFB\u52A0\u4E0A\u53BB\u3002
+`;export{n as default};

@@ -1,1 +1,107 @@
-export default"# 编写主题插件\n\n## 概览\n\n```typescript\nimport { themeFactory } from '@milkdown/core';\n\nconst customTheme = themeFactory({\n    font: {\n        typography: ['Roboto', 'Helvetica', 'Arial'],\n        code: ['Monaco', 'Fira Code'],\n    },\n    size: {\n        radius: '2px',\n        lineWidth: '1px',\n    },\n    color: {\n        primary: '#ff79c6',\n        secondary: '#bd93f9',\n        neutral: '#000',\n        background: '#fff',\n    },\n});\n```\n\n---\n\n## 属性\n\n### font\n\nFont 定义了编辑器中的字体。\n\n-   typography\n    编辑器中的文本的字体，例如标题，段落，引用。\n\n-   code\n    编辑器中的代码的字体，例如代码块和行内代码。\n\n### size\n\n-   radius\n    圆角的大小。\n\n-   lineWidth\n    线的宽度，例如 border 和分割线。\n\n### color\n\n编辑器的色板。\n\n-   primary\n    编辑器的主色。通常被用在大色块上，例如引用区的色块。\n-   secondary\n    编辑器的副色，用在提示区域，例如链接。\n-   solid\n    编辑器中控件的颜色，例如按钮和输入框。\n-   shadow\n    阴影的颜色。\n-   line\n    线的颜色。\n-   surface\n    编辑器的背景色。\n-   background\n    编辑器其它区块的背景色，例如代码块和数学公式输入区。\n\n### mixin\n\nMixin 定义了一些预设样式，方便其它插件重用。\n\n-   scrollbar\n    滚动条的样式。\n-   shadow\n    阴影的样式。\n-   border\n    边框的样式。\n\n### slots\n\nSlots 不仅定义了样式，还定义了对应的 dom 元素。\n\n-   icon\n    定义了对于不同 id，如何实现对应的图标。\n\n需要实现的图标 id:\n\n| 类型 | Ids                                           |\n| ---- | --------------------------------------------- |\n| 段落 | h1, h2, h3, quote, code, table, divider       |\n| 图片 | image, brokenImage                            |\n| 列表 | bulletList, orderedList, taskList             |\n| 箭头 | leftArrow, rightArrow, upArrow, downArrow     |\n| 对齐 | alignLeft, alignRight, alignCenter            |\n| 编辑 | delete, select                                |\n| 行内 | bold, italic, inlineCode, strikeThrough, link |\n| 状态 | checked, unchecked, loading                   |\n\n### global\n\n为编辑器注入的全局样式。\n\n## 示例: NES 主题\n\n> 暂时只支持英文，因为没有找到合适的中文字体 CDN。\n\n!CodeSandBox{milkdown-theme-nes-b0zmy?fontsize=14&hidenavigation=1&theme=dark&view=preview}\n";
+var n=`# \u7F16\u5199\u4E3B\u9898\u63D2\u4EF6
+
+## \u6982\u89C8
+
+\`\`\`typescript
+import { themeFactory } from '@milkdown/core';
+
+const customTheme = themeFactory({
+    font: {
+        typography: ['Roboto', 'Helvetica', 'Arial'],
+        code: ['Monaco', 'Fira Code'],
+    },
+    size: {
+        radius: '2px',
+        lineWidth: '1px',
+    },
+    color: {
+        primary: '#ff79c6',
+        secondary: '#bd93f9',
+        neutral: '#000',
+        background: '#fff',
+    },
+});
+\`\`\`
+
+---
+
+## \u5C5E\u6027
+
+### font
+
+Font \u5B9A\u4E49\u4E86\u7F16\u8F91\u5668\u4E2D\u7684\u5B57\u4F53\u3002
+
+-   typography
+    \u7F16\u8F91\u5668\u4E2D\u7684\u6587\u672C\u7684\u5B57\u4F53\uFF0C\u4F8B\u5982\u6807\u9898\uFF0C\u6BB5\u843D\uFF0C\u5F15\u7528\u3002
+
+-   code
+    \u7F16\u8F91\u5668\u4E2D\u7684\u4EE3\u7801\u7684\u5B57\u4F53\uFF0C\u4F8B\u5982\u4EE3\u7801\u5757\u548C\u884C\u5185\u4EE3\u7801\u3002
+
+### size
+
+-   radius
+    \u5706\u89D2\u7684\u5927\u5C0F\u3002
+
+-   lineWidth
+    \u7EBF\u7684\u5BBD\u5EA6\uFF0C\u4F8B\u5982 border \u548C\u5206\u5272\u7EBF\u3002
+
+### color
+
+\u7F16\u8F91\u5668\u7684\u8272\u677F\u3002
+
+-   primary
+    \u7F16\u8F91\u5668\u7684\u4E3B\u8272\u3002\u901A\u5E38\u88AB\u7528\u5728\u5927\u8272\u5757\u4E0A\uFF0C\u4F8B\u5982\u5F15\u7528\u533A\u7684\u8272\u5757\u3002
+-   secondary
+    \u7F16\u8F91\u5668\u7684\u526F\u8272\uFF0C\u7528\u5728\u63D0\u793A\u533A\u57DF\uFF0C\u4F8B\u5982\u94FE\u63A5\u3002
+-   solid
+    \u7F16\u8F91\u5668\u4E2D\u63A7\u4EF6\u7684\u989C\u8272\uFF0C\u4F8B\u5982\u6309\u94AE\u548C\u8F93\u5165\u6846\u3002
+-   shadow
+    \u9634\u5F71\u7684\u989C\u8272\u3002
+-   line
+    \u7EBF\u7684\u989C\u8272\u3002
+-   surface
+    \u7F16\u8F91\u5668\u7684\u80CC\u666F\u8272\u3002
+-   background
+    \u7F16\u8F91\u5668\u5176\u5B83\u533A\u5757\u7684\u80CC\u666F\u8272\uFF0C\u4F8B\u5982\u4EE3\u7801\u5757\u548C\u6570\u5B66\u516C\u5F0F\u8F93\u5165\u533A\u3002
+
+### mixin
+
+Mixin \u5B9A\u4E49\u4E86\u4E00\u4E9B\u9884\u8BBE\u6837\u5F0F\uFF0C\u65B9\u4FBF\u5176\u5B83\u63D2\u4EF6\u91CD\u7528\u3002
+
+-   scrollbar
+    \u6EDA\u52A8\u6761\u7684\u6837\u5F0F\u3002
+-   shadow
+    \u9634\u5F71\u7684\u6837\u5F0F\u3002
+-   border
+    \u8FB9\u6846\u7684\u6837\u5F0F\u3002
+
+### slots
+
+Slots \u4E0D\u4EC5\u5B9A\u4E49\u4E86\u6837\u5F0F\uFF0C\u8FD8\u5B9A\u4E49\u4E86\u5BF9\u5E94\u7684 dom \u5143\u7D20\u3002
+
+-   icon
+    \u5B9A\u4E49\u4E86\u5BF9\u4E8E\u4E0D\u540C id\uFF0C\u5982\u4F55\u5B9E\u73B0\u5BF9\u5E94\u7684\u56FE\u6807\u3002
+
+\u9700\u8981\u5B9E\u73B0\u7684\u56FE\u6807 id:
+
+| \u7C7B\u578B | Ids                                           |
+| ---- | --------------------------------------------- |
+| \u6BB5\u843D | h1, h2, h3, quote, code, table, divider       |
+| \u56FE\u7247 | image, brokenImage                            |
+| \u5217\u8868 | bulletList, orderedList, taskList             |
+| \u7BAD\u5934 | leftArrow, rightArrow, upArrow, downArrow     |
+| \u5BF9\u9F50 | alignLeft, alignRight, alignCenter            |
+| \u7F16\u8F91 | delete, select                                |
+| \u884C\u5185 | bold, italic, inlineCode, strikeThrough, link |
+| \u72B6\u6001 | checked, unchecked, loading                   |
+
+### global
+
+\u4E3A\u7F16\u8F91\u5668\u6CE8\u5165\u7684\u5168\u5C40\u6837\u5F0F\u3002
+
+## \u793A\u4F8B: NES \u4E3B\u9898
+
+> \u6682\u65F6\u53EA\u652F\u6301\u82F1\u6587\uFF0C\u56E0\u4E3A\u6CA1\u6709\u627E\u5230\u5408\u9002\u7684\u4E2D\u6587\u5B57\u4F53 CDN\u3002
+
+!CodeSandBox{milkdown-theme-nes-b0zmy?fontsize=14&hidenavigation=1&theme=dark&view=preview}
+`;export{n as default};

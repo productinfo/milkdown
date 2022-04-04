@@ -1,1 +1,95 @@
-export default"# Keyboard Shortcuts\n\nKeyboard shortcuts are provided by default from both presets and plugins. Depending on your behavior, you might want to change them to what you like.\n\n---\n\n## Default Shortcuts Table\n\n> `Mod` is `Cmd` on macOS and `Ctrl` for windows/linux.\n\n### Essentials\n\n| Action    | Key       |\n| --------- | --------- |\n| Copy      | Mod-c     |\n| Cut       | Mod-x     |\n| Paste     | Mod-v     |\n| New Line  | Enter     |\n| Exit Code | Mod-Enter |\n\n### History\n\n| Action | Key         |\n| ------ | ----------- |\n| Undo   | Mod-z       |\n| Redo   | Mod-Shift-z |\n\n### Mark\n\n| Action         | Key       |\n| -------------- | --------- |\n| Bold           | Mod-b     |\n| Italic         | Mod-i     |\n| Inline Code    | Mod-e     |\n| Strike Through | Mod-Alt-x |\n\n### Paragraph\n\n| Action      | Key         |\n| ----------- | ----------- |\n| Normal Text | Mod-Alt-0   |\n| H1          | Mod-Alt-1   |\n| H2          | Mod-Alt-2   |\n| H3          | Mod-Alt-3   |\n| H4          | Mod-Alt-4   |\n| H5          | Mod-Alt-5   |\n| H6          | Mod-Alt-6   |\n| Code Fence  | Mod-Alt-c   |\n| Line Break  | Shift-Enter |\n\n### List\n\n| Action         | Key       |\n| -------------- | --------- |\n| Ordered List   | Mod-Alt-7 |\n| Bullet List    | Mod-Alt-8 |\n| Task List      | Mod-Alt-9 |\n| Sink List Item | Mod-]     |\n| Lift List Item | Mod-[     |\n\n### Table\n\n| Action               | Key       |\n| -------------------- | --------- |\n| Next Cell            | Mod-]     |\n| Prev Cell            | Mod-[     |\n| Exit Table and Break | Mod-Enter |\n\n---\n\n## Configure Shortcuts\n\nYou can configure shortcuts just like configure their styles:\n\n```typescript\nimport { commonmarkNodes, commonmarkPlugins, blockquote, SupportedKeys } from '@milkdown/preset-commonmark';\n\nEditor.make().use(commonmarkPlugins).use(nodes);\n\nconst nodes = commonmarkNodes.configure(blockquote, {\n    keymap: {\n        [SupportedKeys.Blockquote]: 'Mod-Shift-b',\n        // or you may want to bind multiple keys:\n        [SupportedKeys.Blockquote]: ['Mod-Shift-b', 'Mod-b'],\n    },\n});\n\nEditor.make().use(nodes).use(commonmarkPlugins);\n```\n\nYou can inspect the `SupportedKeys` enum to find out the supported commands that can be configured.\n\nIf there is no supported commands for the behavior you expect, you can write a [prosemirror keymap plugin](https://github.com/ProseMirror/prosemirror-keymap) to do this.\nYou can read the [building plugins](/#/building-plugins) section to get further information.\n";
+var n=`# Keyboard Shortcuts
+
+Keyboard shortcuts are provided by default from both presets and plugins. Depending on your behavior, you might want to change them to what you like.
+
+---
+
+## Default Shortcuts Table
+
+> \`Mod\` is \`Cmd\` on macOS and \`Ctrl\` for windows/linux.
+
+### Essentials
+
+| Action    | Key       |
+| --------- | --------- |
+| Copy      | Mod-c     |
+| Cut       | Mod-x     |
+| Paste     | Mod-v     |
+| New Line  | Enter     |
+| Exit Code | Mod-Enter |
+
+### History
+
+| Action | Key         |
+| ------ | ----------- |
+| Undo   | Mod-z       |
+| Redo   | Mod-Shift-z |
+
+### Mark
+
+| Action         | Key       |
+| -------------- | --------- |
+| Bold           | Mod-b     |
+| Italic         | Mod-i     |
+| Inline Code    | Mod-e     |
+| Strike Through | Mod-Alt-x |
+
+### Paragraph
+
+| Action      | Key         |
+| ----------- | ----------- |
+| Normal Text | Mod-Alt-0   |
+| H1          | Mod-Alt-1   |
+| H2          | Mod-Alt-2   |
+| H3          | Mod-Alt-3   |
+| H4          | Mod-Alt-4   |
+| H5          | Mod-Alt-5   |
+| H6          | Mod-Alt-6   |
+| Code Fence  | Mod-Alt-c   |
+| Line Break  | Shift-Enter |
+
+### List
+
+| Action         | Key       |
+| -------------- | --------- |
+| Ordered List   | Mod-Alt-7 |
+| Bullet List    | Mod-Alt-8 |
+| Task List      | Mod-Alt-9 |
+| Sink List Item | Mod-]     |
+| Lift List Item | Mod-[     |
+
+### Table
+
+| Action               | Key       |
+| -------------------- | --------- |
+| Next Cell            | Mod-]     |
+| Prev Cell            | Mod-[     |
+| Exit Table and Break | Mod-Enter |
+
+---
+
+## Configure Shortcuts
+
+You can configure shortcuts just like configure their styles:
+
+\`\`\`typescript
+import { commonmarkNodes, commonmarkPlugins, blockquote, SupportedKeys } from '@milkdown/preset-commonmark';
+
+Editor.make().use(commonmarkPlugins).use(nodes);
+
+const nodes = commonmarkNodes.configure(blockquote, {
+    keymap: {
+        [SupportedKeys.Blockquote]: 'Mod-Shift-b',
+        // or you may want to bind multiple keys:
+        [SupportedKeys.Blockquote]: ['Mod-Shift-b', 'Mod-b'],
+    },
+});
+
+Editor.make().use(nodes).use(commonmarkPlugins);
+\`\`\`
+
+You can inspect the \`SupportedKeys\` enum to find out the supported commands that can be configured.
+
+If there is no supported commands for the behavior you expect, you can write a [prosemirror keymap plugin](https://github.com/ProseMirror/prosemirror-keymap) to do this.
+You can read the [building plugins](/#/building-plugins) section to get further information.
+`;export{n as default};

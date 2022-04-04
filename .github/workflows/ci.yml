@@ -27,7 +27,7 @@ jobs:
             - name: install pnpm
               run: npm i pnpm@latest -g
             - name: load cache
-              uses: actions/cache@v2
+              uses: actions/cache@v3.0.1
               with:
                   path: |
                       ./.pnpm-store
@@ -58,7 +58,7 @@ jobs:
             - name: install pnpm
               run: npm i pnpm@latest -g
             - name: load cache
-              uses: actions/cache@v2
+              uses: actions/cache@v3.0.1
               with:
                   path: |
                       ./.pnpm-store
@@ -98,7 +98,7 @@ jobs:
             - name: install pnpm
               run: npm i pnpm@latest -g
             - name: load cache
-              uses: actions/cache@v2
+              uses: actions/cache@v3.0.1
               with:
                   path: |
                       ./.pnpm-store
